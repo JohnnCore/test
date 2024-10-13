@@ -11,6 +11,7 @@ import type { LinkToCardPluginOptions } from '@luckrya/markdown-it-link-to-card'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+    base:'/test/',
     title: "The Hacker Recipes",
     srcDir: 'src',
     description: "The Hacker Recipes is aimed at freely providing technical guides on various hacking topics",
