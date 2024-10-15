@@ -1,6 +1,0 @@
----
-authors: ShutdownRepo
----
-
-# WPA
-

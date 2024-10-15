@@ -1,0 +1,50 @@
+# Attacking SAM
+With access to a non-domain joined Windows system, we may benefit from attempting to quickly dump the files associated with the SAM database to transfer them to our attack host and start cracking hashes offline. Doing this offline will ensure we can continue to attempt our attacks without maintaining an active session with a target. Let's walk through this process together using a target host. Feel free to follow along by spawning the target box in this section.
+Copying SAM Registry Hives
+
+There are three registry hives that we can copy if we have local admin access on the target; each will have a specific purpose when we get to dumping and cracking the hashes. Here is a brief description of each in the table below:
+Registry Hive 	Description
+hklm\sam 	Contains the hashes associated with local account passwords. We will need the hashes so we can crack them and get the user account passwords in cleartext.
+hklm\system 	Contains the system bootkey, which is used to encrypt the SAM database. We will need the bootkey to decrypt the SAM database.
+hklm\security 	Contains cached credentials for domain accounts. We may benefit from having this on a domain-joined Windows target.
+
+We can create backups of these hives using the reg.exe utility.
+
+## Using reg.exe save to Copy Registry Hives
+```
+reg.exe save hklm\sam C:\sam.save
+reg.exe save hklm\system C:\system.save
+reg.exe save hklm\security C:\security.save
+```
+
+## Dumping Hashes Offline
+One incredibly useful tool we can use to dump the hashes offline is Impacket's secretsdump.py. Impacket can be found on most modern penetration testing distributions. We can check for it by using locate on a Linux-based system:
+
+```
+$ python3 /usr/share/doc/python3-impacket/examples/secretsdump.py -sam sam.save -security security.save -system system.save LOCAL
+$ impacket-secretsdump -sam sam.save -security security.save -system system.save LOCAL
+
+```
+
+## Mimikatz
+```
+mimikatz > privilege::debug
+mimikatz > token::elevate
+mimikatz > lsadump::sam
+```
+
+## Dumping Hashes Remote
+```
+$ crackmapexec smb <IP/RANGE> --local-auth -u <USERNAME> -p <PASSWORD> --sam`
+$ crackmapexec smb <IP/RANGE> -u <USERNAME> -p <PASSWORD> --sam`
+$ secretsdump.py <DOMAIN>/<USER>:<PASSWORD>@<IP> 
+```
+
+## Cracking Hashes with Hashcat
+Once we have the hashes, we can start attempting to crack them using Hashcat. We will use it to attempt to crack the hashes we have gathered. If we take a glance at the Hashcat website, we will notice support for a wide array of hashing algorithms. In this module, we use Hashcat for specific use cases. This should help us develop the mindset & understanding to use Hashcat as well as know when we need to reference Hashcat's documentation to understand what mode and options we need to use depending on the hashes we capture.
+
+As mentioned previously, we can populate a text file with the NT hashes we were able to dump.
+
+Hashcat has many different modes we can use. Selecting a mode is largely dependent on the type of attack and hash type we want to crack. Covering each mode is beyond the scope of this module. We will focus on using -m to select the hash type 1000 to crack our NT hashes (also referred to as NTLM-based hashes). We can refer to Hashcat's wiki page or the man page to see the supported hash types and their associated number. We will use the infamous rockyou.txt wordlist mentioned in the Credential Storage section of this module.
+
+- `sudo hashcat -m 1000 hashestocrack.txt /usr/share/wordlists/rockyou.txt`

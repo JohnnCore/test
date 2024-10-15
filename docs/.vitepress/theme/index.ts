@@ -3,8 +3,6 @@ import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import Placeholder from './components/Placeholder.vue'
 import PageNotFound from "./components/PageNotFound.vue"
-import News from './components/News.vue'
-import Authors from './components/Authors.vue'
 import CustomSidebarItem from './components/CustomSidebarItem.vue';
 import './custom.css'
 import mediumZoom from 'medium-zoom'
@@ -21,14 +19,11 @@ export default {
 
     return h(DefaultTheme.Layout, null, {
       // 'aside-ads-before': () => h(Placeholder),
-      'aside-ads-before': () => h(Authors),
       // 'doc-before': () => h(Placeholder),
       // 'doc-footer-before': () => isMobile.value ? h(Authors) : h(Placeholder),
       // 'doc-footer-before': () => isMobile.value ? h(Authors) : h(Placeholder),
-      'doc-footer-before': () => isMobileorTablet.value ? h(Authors) : null,
       // 'aside-outline-after': () => isMobile.value ? null : h(Authors),
       // 'nav-screen-content-after': () => h(Placeholder),
-      'sidebar-nav-before': () => h(News),
       'not-found': () => h(PageNotFound),
     })
   },

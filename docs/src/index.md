@@ -1,23 +1,61 @@
----
-next: false
-editLink: false
-lastUpdated: false
-authors: 4ndr3w6, A1vinSmith, AzeTIIx, BlWasp, blepdoge, Bnder1, CravateRouge, Croumi, CryingWelkin, CyrilleFranchet, Hackndo, KenjiEndo15, Lamber-maybe, LucasParsy, NaxnN, PfiatDe, Pri3st, ShutdownRepo, ThePirateWhoSmellsOfSunflowers, WoBuGs, Yaxxine7, almandin, amirr0r, clem9669, dreamkinn, fransosiche, itbelongsinamuseum, joker2a, lap1nou, mauricelambert, mpgn, noraj, nuts7, p0dalirius, sckdev, skileau
----
+Credits:
+- [htb](https://academy.hackthebox.com/module/details/90)
+- [ad mind map](https://raw.githubusercontent.com/esidate/pentesting-active-directory/a8e37705542720cb1f9b65ec9039f67b70b61ca6/v2/pentesting_active_directory.svg) 
+- cheat sheets listed below:
 
-![](<assets/welcome.png>){.rawimg}
+# AD
+- https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a
+- https://github.com/S1ckB0y1337/Active-Directory-Exploitation-Cheat-Sheet/blob/master/README.md
+- https://github.com/Tib3rius/Active-Directory-Exploitation-Cheat-Sheet/blob/master/README.md
 
-<br>
+# Other
+- https://github.com/0xsyr0/OSCP?tab=readme-ov-file#active-directory
+- https://github.com/saisathvik1/OSCP-Cheatsheet
+- https://gitlab.com/lagarian.smith/oscp-cheat-sheet/-/blob/master/OSCP_Notes.md
 
-This project is aimed at providing technical guides on various hacking topics. The most advanced topics are Active Directory and Web services. Other topics will be added. The ultimate goal is to centralize all hacking techniques :eyes:
 
-> [!SUCCESS] Exegol
-> Almost all tools mentioned in theses notes can be found in [Exegol](https://exegol.rtfd.io) (a professional alternative to offsec operating systems such as Kali Linux).
+# Table of Contents
+- Services
+    - [DNS](zNew/Services/DNS)
+    - [FTP](zNew/Services/FTP)
+    - [IMAP/POP3](zNew/Services/IMAP-POP3)
+    - [IPMI](zNew/Services/IPMI)
+    - [NFS](zNew/Services/NFS)
+    - [OracleTNS](zNew/Services/OracleTNS)
+    - [RDP](zNew/Services/RDP)
+    - [SMB](zNew/Services/SMB)
+    - [SMTP](zNew/Services/SMTP)
+    - [SNMP](zNew/Services/SNMP)
+    - [SQL](zNew/Services/SQL)
+    - [SSH](zNew/Services/SSH)
+    - [WINRM](zNew/Services/WINRM)
+    - [WMI](zNew/Services/WMI)
+- Web
+    - OWASP
+        - [SQL Injection](zNew/Web/OWASP/SQLi/)
+        - [Cross-Site Scripting (XSS)](zNew/Web/OWASP/XSS/)
+        - [File Inclusion (LFI/RFI)](zNew/Web/OWASP/FI/)
+        - [Command Injection](zNew/Web/OWASP/CI/)
+        - [XML External Entity (XEE)](zNew/Web/OWASP/XEE/)
+        - [File Upload](zNew/Web/OWASP/FileUpload/)
+        - [Server Side Template Injection](zNew/Web/OWASP/SSTI/)
+        - [HTTP Verb Tampering](zNew/Web/OWASP/HTTPVerbTampering/)
+        - [Insecure Direct Object Reference (IDOR)](zNew/Web/OWASP/IDOR/)
+        - [No SQL Injection](zNew/Web/OWASP/NOSQLI/)
+- [Shell](zNew/Shell/Shell)
+- [Metasploit](zNew/Metasploit/Metasploit)
+- Privilege Escalation
+    - [Linux](zNew/PrivilegeEscalation/Linux)
+    - [Windows](zNew/PrivilegeEscalation/Windows)
+- [Pivoting](zNew/Pivoting/Pivoting)
+- Transfer Files
+    - [Linux](zNew/TransferFiles/Linux)
+    - [Windows](zNew/TransferFiles/Windows)
+    - [Living Off The Land](zNew/TransferFiles/LivingOffTheLand)
+    - [Catching Files Over HTTP](zNew/TransferFiles/FilesoverHTTP)
+    - [Transfer Files With Code](zNew/TransferFiles/TransferFilesCode)
+    - [Miscellaneous Methods](zNew/TransferFiles/Miscellaneous)
+    - [Protected File Transfer](zNew/TransferFiles/ProtectFiles)
 
-Cheatsheets are valuable resources, but they often either overwhelm with complexity or fall short by not providing enough context and explanation. This is not a cheatsheet project. Most of the content published here is original content, that's verified and tested whenever possible.
 
-Keep in mind that these guides are maintained by non-omniscient security enthusiasts in their spare time. You will probably find things missing or mistakes. Writing all this takes time and effort and if you encounter errors, we will be more than happy to fix them :pray:
-
-> [!TIP] Reach out
-> Exegol and The Hacker Recipes have both been created by me, Charlie Bromberg a.k.a. Shutdown.
-> :mega: Please feel free to contribute, give feedback/suggestions or reach out on Twitter  ([@\_nwodtuhs](https://twitter.com/\_nwodtuhs)), Discord (@nwodtuhs), IRL or whatever you feel appropriate.
+- [ActiveDirectory](zNew/ActiveDirectory/ActiveDirectory)

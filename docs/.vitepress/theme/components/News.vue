@@ -1,12 +1,4 @@
 <template>
-  <div class="action">
-    <a class="news-button" href="/new_version">
-      <span class="material-symbols-outlined">
-        new_releases
-      </span>
-      &nbsp;&nbsp;Welcome to THR v2!
-    </a>
-  </div>
 </template>
 
 <style scoped>

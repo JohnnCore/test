@@ -11,7 +11,7 @@ import type { LinkToCardPluginOptions } from '@luckrya/markdown-it-link-to-card'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-    base:'/test/',
+    base:'/PenTest-Cheat-Sheet/',
     title: "The Hacker Recipes",
     srcDir: 'src',
     description: "The Hacker Recipes is aimed at freely providing technical guides on various hacking topics",
@@ -60,8 +60,8 @@ export default defineConfig({
             provider: 'local'
         },
         nav: [
-            { text: 'Tools', link: 'https://tools.thehacker.recipes/' },
-            { text: 'Exegol', link: 'https://exegol.readthedocs.io/en/latest/' },
+            // { text: 'Tools', link: 'https://tools.thehacker.recipes/' },
+            // { text: 'Exegol', link: 'https://exegol.readthedocs.io/en/latest/' },
         ],
         outline: "deep",
         sidebar: [
@@ -323,116 +323,15 @@ export default defineConfig({
                                 "link": "/ad/movement/kerberos/index.md",
                                 "collapsed": true,
                                 "items": [
+
                                     {
-                                        "text": "Pre-auth bruteforce",
-                                        "link": "/ad/movement/kerberos/pre-auth-bruteforce.md"
-                                    },
-                                    {
-                                        "text": "Pass the key",
-                                        "link": "/ad/movement/kerberos/ptk.md"
-                                    },
-                                    {
-                                        "text": "Overpass the hash",
-                                        "link": "/ad/movement/kerberos/opth.md"
+                                        "text": "Pass the key/ Overpass the hash",
+                                        "link": "/zNew/ActiveDirectory/Movement/Kerberos/PassTheKeyOverPassTheHash.md"
                                     },
                                     {
                                         "text": "Pass the ticket",
-                                        "link": "/ad/movement/kerberos/ptt.md"
+                                        "link": "/zNew/ActiveDirectory/Movement/Kerberos/PassTheTicket.md"
                                     },
-                                    {
-                                        "text": "Pass the cache",
-                                        "link": "/ad/movement/kerberos/ptc.md"
-                                    },
-                                    {
-                                        "text": "Forged tickets",
-                                        "link": "/ad/movement/kerberos/forged-tickets/index.md",
-                                        "collapsed": true,
-                                        "items": [
-                                            {
-                                                "text": "Silver tickets",
-                                                "link": "/ad/movement/kerberos/forged-tickets/silver.md"
-                                            },
-                                            {
-                                                "text": "Golden tickets",
-                                                "link": "/ad/movement/kerberos/forged-tickets/golden.md"
-                                            },
-                                            {
-                                                "text": "Diamond tickets",
-                                                "link": "/ad/movement/kerberos/forged-tickets/diamond.md"
-                                            },
-                                            {
-                                                "text": "Sapphire tickets",
-                                                "link": "/ad/movement/kerberos/forged-tickets/sapphire.md"
-                                            },
-                                            {
-                                                "text": "RODC Golden tickets",
-                                                "link": "/ad/movement/kerberos/forged-tickets/rodc-golden-tickets.md"
-                                            },
-                                            {
-                                                "text": "MS14-068",
-                                                "link": "/ad/movement/kerberos/forged-tickets/ms14-068.md"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "text": "ASREQroast",
-                                        "link": "/ad/movement/kerberos/asreqroast.md"
-                                    },
-                                    {
-                                        "text": "ASREProast",
-                                        "link": "/ad/movement/kerberos/asreproast.md"
-                                    },
-                                    {
-                                        "text": "Kerberoast",
-                                        "link": "/ad/movement/kerberos/kerberoast.md"
-                                    },
-                                    {
-                                        "text": "Delegations",
-                                        "link": "/ad/movement/kerberos/delegations/index.md",
-                                        "collapsed": true,
-                                        "items": [
-                                            {
-                                                "text": "(KUD) Unconstrained",
-                                                "link": "/ad/movement/kerberos/delegations/unconstrained.md"
-                                            },
-                                            {
-                                                "text": "(KCD) Constrained",
-                                                "link": "/ad/movement/kerberos/delegations/constrained.md"
-                                            },
-                                            {
-                                                "text": "(RBCD) Resource-based constrained",
-                                                "link": "/ad/movement/kerberos/delegations/rbcd.md"
-                                            },
-                                            {
-                                                "text": "S4U2self abuse",
-                                                "link": "/ad/movement/kerberos/delegations/s4u2self-abuse.md"
-                                            },
-                                            {
-                                                "text": "Bronze Bit",
-                                                "link": "/ad/movement/kerberos/delegations/bronze-bit.md"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "text": "Shadow Credentials",
-                                        "link": "/ad/movement/kerberos/shadow-credentials.md"
-                                    },
-                                    {
-                                        "text": "UnPAC the hash",
-                                        "link": "/ad/movement/kerberos/unpac-the-hash.md"
-                                    },
-                                    {
-                                        "text": "Pass the Certificate",
-                                        "link": "/ad/movement/kerberos/pass-the-certificate.md"
-                                    },
-                                    {
-                                        "text": "sAMAccountName spoofing",
-                                        "link": "/ad/movement/kerberos/samaccountname-spoofing.md"
-                                    },
-                                    {
-                                        "text": "SPN-jacking",
-                                        "link": "/ad/movement/kerberos/spn-jacking.md"
-                                    }
                                 ]
                             },
                             {
@@ -1122,254 +1021,16 @@ export default defineConfig({
                     }
                 ]
             },
-            {
-                "text": "Evasion",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "(AV) Anti-Virus",
-                        "link": "/evasion/av/index.md",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "🛠️ Loader",
-                                "link": "/evasion/av/loader.md"
-                            },
-                            {
-                                "text": "🛠️ Dropper",
-                                "link": "/evasion/av/dropper.md"
-                            },
-                            {
-                                "text": "🛠️ Obfuscation",
-                                "link": "/evasion/av/obfuscation.md"
-                            },
-                            {
-                                "text": "🛠️ Process injection",
-                                "link": "/evasion/av/process-injection.md"
-                            },
-                            {
-                                "text": "🛠️ Stealth with C2",
-                                "link": "/evasion/av/stealth.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "🛠️ (EDR) Endpoint Detection and Response",
-                        "link": "/evasion/edr.md"
-                    }
-                ]
-            },
-            {
-                "text": "Physical",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "Locks",
-                        "link": "/physical/lockpicking.md"
-                    },
-                    {
-                        "text": "Networking",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "Network Access Control",
-                                "link": "/physical/networking/network-access-control.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "Machines",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "HID injection",
-                                "link": "/physical/physical-access/hid-injection.md"
-                            },
-                            {
-                                "text": "Keylogging",
-                                "link": "/physical/physical-access/keylogging.md"
-                            },
-                            {
-                                "text": "BIOS security",
-                                "link": "/physical/physical-access/bios-security.md"
-                            },
-                            {
-                                "text": "Encryption",
-                                "link": "/physical/physical-access/encryption.md"
-                            },
-                            {
-                                "text": "Airstrike attack",
-                                "link": "/physical/physical-access/airstrike-attack.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "Super secret zones",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "🍌 Banana & chocolate cake",
-                                "link": "/physical/super-secret-zones/banana-and-chocolate-cake.md"
-                            },
-                            {
-                                "text": "🍳 Omelette du fromage",
-                                "link": "/physical/super-secret-zones/omelette-du-fromage.md"
-                            },
-                            {
-                                "text": "🍔 Burger du seigneur",
-                                "link": "/physical/super-secret-zones/burger-du-seigneur.md"
-                            },
-                            {
-                                "text": "🥞 The Pancakes of Heaven",
-                                "link": "/physical/super-secret-zones/the-pancakes-of-heaven.md"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "text": "Intelligence gathering",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "CYBINT",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "Emails",
-                                "link": "/intelligence-gathering/cybint/emails.md"
-                            },
-                            {
-                                "text": "Web infrastructure",
-                                "link": "/intelligence-gathering/cybint/web-infrastructure.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "OSINT",
-                        "link": "/intelligence-gathering/osint.md"
-                    },
-                    {
-                        "text": "GEOINT",
-                        "link": "/intelligence-gathering/geoint.md"
-                    }
-                ]
-            },
-            {
-                "text": "Radio",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "RFID",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "Mifare Classic",
-                                "link": "/radio/rfid/mifare-classic/index.md",
-                                "collapsed": true,
-                                "items": [
-                                    {
-                                        "text": "Default keys",
-                                        "link": "/radio/rfid/mifare-classic/default-keys.md"
-                                    },
-                                    {
-                                        "text": "Darkside",
-                                        "link": "/radio/rfid/mifare-classic/darkside.md"
-                                    },
-                                    {
-                                        "text": "Nested",
-                                        "link": "/radio/rfid/mifare-classic/nested.md"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "text": "Bluetooth",
-                        "link": "/radio/bluetooth.md"
-                    },
-                    {
-                        "text": "Wi-Fi",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "WEP",
-                                "link": "/radio/wi-fi/wep/index.md"
-                            },
-                            {
-                                "text": "🛠️ WPA2",
-                                "link": "/radio/wi-fi/wpa2/index.md"
-                            },
-                            {
-                                "text": "🛠️ WPA3",
-                                "link": "/radio/wi-fi/wpa3/index.md"
-                            },
-                            {
-                                "text": "WPS",
-                                "link": "/radio/wi-fi/wps/index.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "Wireless keyboard/mouse",
-                        "link": "/radio/wireless-keyboard-mouse.md"
-                    }
-                ]
-            },
-            {
-                "text": "Mobile apps",
-                "collapsed": true,
-                "items": [
-                    {
-                        "text": "Android",
-                        "link": "/mobile-apps/android.md",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "Android Debug Bridge ⚙️",
-                                "link": "/mobile-apps/android/android-debug-bridge.md"
-                            },
-                            {
-                                "text": "APK transform",
-                                "link": "/mobile-apps/android/apk-transform.md"
-                            }
-                        ]
-                    },
-                    {
-                        "text": "iOS",
-                        "collapsed": true,
-                        "items": [
-                            {
-                                "text": "Certificate pinning",
-                                "link": "/mobile-apps/ios/certificate-pinning.md"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "text": "Contributing to THR",
-                "collapsed": false,
-                "items": [
-                    {
-                        "text": "Guide",
-                        "link": "/contributing.md"
-                    },
-                    {
-                        "text" : "Template",
-                        "link" :"/template.md"
-                    }
-                ]
-            },
+        
         ],
         socialLinks: [
             { icon: 'github', link: 'https://github.com/The-Hacker-Recipes/The-Hacker-Recipes' },
-            { icon: 'x', link: 'https://x.com/_nwodtuhs' },
-            { icon: 'linkedin', link: 'https://www.linkedin.com/in/nwodtuhs/' }
+            // { icon: 'x', link: 'https://x.com/_nwodtuhs' },
+            // { icon: 'linkedin', link: 'https://www.linkedin.com/in/nwodtuhs/' }
         ],
         editLink: {
-            text: "Contribute to this page",
-            pattern: 'https://github.com/The-Hacker-Recipes/The-Hacker-Recipes/edit/main/docs/src/:path'
+            // text: "Contribute to this page",
+            // pattern: 'https://github.com/The-Hacker-Recipes/The-Hacker-Recipes/edit/main/docs/src/:path'
         }
     },
     markdown: {

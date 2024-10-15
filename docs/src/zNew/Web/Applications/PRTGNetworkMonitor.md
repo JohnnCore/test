@@ -1,0 +1,2 @@
+# Discovery/Footprinting/Enumeration
+We can quickly discover PRTG from an Nmap scan. It can typically be found on common web ports such as 80, 443, or 8080. It is possible to change the web interface port in the Setup section when logged in as an admin.
