@@ -764,7 +764,7 @@ PS > Get-DomainUser -UACFilter PASSWD_NOTREQD | Select-Object samaccountname,use
 # Lateral Movement
 ## Credentials/ Pass The Hash
 ### Validating the Credentials
-[ldap,mssql,smb,ssh,winrm]
+{ldap,mssql,smb,ssh,winrm}
 ```bash
 $ crackmapexec <protocol> <ip_range> -u <user> -p <password> -d <domain>
 $ crackmapexec <protocol> <ip_range> -u <user> -H <hash> -d <domain>
